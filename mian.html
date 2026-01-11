@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浙江大学传媒国际文化经济高培中心 - 高管教育课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --zju-blue: #0055AA;
+            --zju-dark-blue: #003366;
+            --zju-light-blue: #1a73b5;
+            --zju-gold: #C4A000;
+            --zju-gold-light: #DAA520;
+            --bg-light: #FAFBFC;
+            --text-dark: #1a1a2e;
+            --text-gray: #5a5a6e;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--zju-dark-blue) 0%, var(--zju-blue) 50%, var(--zju-light-blue) 100%);
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.05)"/><circle cx="80" cy="30" r="3" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="70" r="2" fill="rgba(255,255,255,0.05)"/><circle cx="90" cy="80" r="2.5" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+            background-size: 100px 100px;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-content.detail {
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 30px 20px;
+        }
+
+        .university-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .university-badge.detail {
+            justify-content: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .university-logo {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .university-logo.detail {
+            width: 36px;
+            height: 36px;
+        }
+
+        .university-logo svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .university-logo.detail svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .university-name {
+            font-size: 15px;
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .university-name.detail {
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+            letter-spacing: 3px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .page-title.detail {
+            font-size: 22px;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        .page-subtitle {
+            font-size: 16px;
+            color: rgba(255,255,255,0.85);
+            letter-spacing: 1px;
+        }
+
+        .decorative-line {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--zju-gold), transparent);
+            margin: 20px auto 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .category-section {
+            margin-bottom: 60px;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--zju-blue);
+        }
+
+        .category-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--zju-blue), var(--zju-light-blue));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,85,170,0.3);
+        }
+
+        .category-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .category-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--zju-dark-blue);
+            letter-spacing: 2px;
+        }
+
+        .course-pair {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .course-pair {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 1px solid rgba(0,85,170,0.1);
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,85,170,0.15);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-image-bg {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .course-card:hover .course-image-bg {
+            transform: scale(1.05);
+        }
+
+        .course-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0,51,102,0.8) 100%);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--zju-gold);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(196,160,0,0.4);
+        }
+
+        .course-content {
+            padding: 25px;
+        }
+
+        .course-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--zju-dark-blue);
+            margin-bottom: 12px;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .course-card:hover .course-title {
+            color: var(--zju-blue);
+        }
+
+        .course-desc {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .course-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .course-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .course-meta-item svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--zju-blue);
+        }
+
+        .btn-details {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--zju-blue), var(--zju-light-blue));
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .btn-details:hover {
+            background: linear-gradient(135deg, var(--zju-dark-blue), var(--zju-blue));
+            transform: translateX(5px);
+        }
+
+        .btn-details svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover .btn-details svg {
+            transform: translateX(3px);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--zju-dark-blue) 0%, var(--zju-blue) 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .footer-logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .footer-logo svg {
+            width: 44px;
+            height: 44px;
+        }
+
+        .footer-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .footer-subtitle {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact {
+            font-size: 13px;
+            opacity: 0.7;
+            line-height: 1.8;
+        }
+
+        .footer-line {
+            width: 60px;
+            height: 2px;
+            background: var(--zju-gold);
+            margin: 20px auto;
+        }
+
+        .copyright {
+            font-size: 12px;
+            opacity: 0.6;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .course-card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .course-card:nth-child(1) { animation-delay: 0.1s; }
+        .course-card:nth-child(2) { animation-delay: 0.2s; }
+        .course-card:nth-child(3) { animation-delay: 0.3s; }
+        .course-card:nth-child(4) { animation-delay: 0.4s; }
+        .course-card:nth-child(5) { animation-delay: 0.5s; }
+        .course-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,85,170,0.2), transparent);
+            margin: 40px 0;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, var(--zju-dark-blue) 0%, var(--zju-blue) 50%, #1a5a9e 100%);
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .hero-subtitle {
+            font-size: 15px;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        /* Detail Page Styles */
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 16px;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .back-btn:hover {
+            opacity: 1;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .back-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,51,102,0.95) 0%, rgba(0,85,170,0.85) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        .course-badge.large {
+            display: inline-block;
+            background: var(--zju-gold);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .course-title.large {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .course-subtitle.large {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .course-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--zju-gold);
+        }
+
+        .stat-label {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--zju-dark-blue);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--zju-blue);
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--zju-blue), var(--zju-light-blue));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .content-text {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .content-text p {
+            margin-bottom: 15px;
+        }
+
+        .content-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--zju-blue), var(--zju-light-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-icon svg {
+            width: 14px;
+            height: 14px;
+            fill: white;
+        }
+
+        .feature-text {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0,85,170,0.05) 0%, rgba(0,85,170,0.1) 100%);
+            border-left: 4px solid var(--zju-blue);
+            padding: 20px 25px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            font-size: 15px;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .curriculum-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .curriculum-item:last-child {
+            border-bottom: none;
+        }
+
+        .module-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--zju-blue), var(--zju-light-blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .module-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--zju-dark-blue);
+            margin-bottom: 8px;
+        }
+
+        .module-content p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--zju-dark-blue) 0%, var(--zju-blue) 100%);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .cta-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .cta-subtitle {
+            font-size: 15px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--zju-gold);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--zju-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196,160,0,0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Page Switching */
+        #home-page {
+            display: block;
+        }
+
+        #detail-page {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <div id="home-page">
+        <header class="header">
+            <div class="header-content">
+                <span class="university-name">浙江大学传媒国际文化经济高培中心</span>
+                <h1 class="page-title">高管教育课程</h1>
+                <p class="page-subtitle">Executive Education Programs</p>
+                <div class="decorative-line"></div>
+            </div>
+        </header>
+
+        <div class="hero-banner">
+            <div class="hero-content">
+                <h2 class="hero-title">赋能企业领袖 · 引领创新发展</h2>
+                <p class="hero-subtitle">立足浙江大学优质资源，培养具有全球视野的企业家领袖</p>
+            </div>
+        </div>
+
+        <main class="container">
+            <section class="category-section">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h2 class="category-title">企业管理</h2>
+                </div>
+                <div class="course-pair">
+                    <article class="course-card" onclick="showDetail('finance')">
+                        <div class="course-image">
+                            <div class="course-image-bg" style="background: linear-gradient(135deg, #1a5a9e 0%, #0055AA 50%, #003366 100%);">
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+                                    <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                                </div>
+                            </div>
+                            <div class="course-overlay"></div>
+                            <span class="course-badge">热门课程</span>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">金融投资实战运营高级研修班</h3>
+                            <p class="course-desc">深入解析资本市场运作规律，掌握投资决策核心技能，提升企业资本运营能力。</p>
+                            <div class="course-meta">
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+                                    <span>学制：一年</span>
+                                </span>
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                                    <span>学费：48800</span>
+                                </span>
+                            </div>
+                            <button class="btn-details">
+                                了解课程详情
+                                <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="course-card" onclick="showDetail('zheshang')">
+                        <div class="course-image">
+                            <div class="course-image-bg" style="background: linear-gradient(135deg, #DAA520 0%, #C4A000 50%, #8B7500 100%);">
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+                                    <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="course-overlay"></div>
+                            <span class="course-badge">精品课程</span>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">浙商企业家创新高级研修班</h3>
+                            <p class="course-desc">传承浙商精神，赋能企业创新转型升级，助力新一代企业家成长成才。</p>
+                            <div class="course-meta">
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+                                    <span>学制：一年</span>
+                                </span>
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                                    <span>学费：38880</span>
+                                </span>
+                            </div>
+                            <button class="btn-details">
+                                了解课程详情
+                                <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section class="category-section">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+                    </div>
+                    <h2 class="category-title">人文智慧</h2>
+                </div>
+                <div class="course-pair">
+                    <article class="course-card" onclick="showDetail('guoxue')">
+                        <div class="course-image">
+                            <div class="course-image-bg" style="background: linear-gradient(135deg, #8B0000 0%, #A52A2A 50%, #CD5C5C 100%);">
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+                                    <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                                </div>
+                            </div>
+                            <div class="course-overlay"></div>
+                            <span class="course-badge">经典课程</span>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">浙江大学国学智慧与管理应用高级研修班</h3>
+                            <p class="course-desc">提升领导智慧，强化文化底蕴，启发管理思维。</p>
+                            <div class="course-meta">
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+                                    <span>学制：一年</span>
+                                </span>
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3z"/></svg>
+                                    <span>学费：48800</span>
+                                </span>
+                            </div>
+                            <button class="btn-details">
+                                了解课程详情
+                                <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="course-card" onclick="showDetail('culture')">
+                        <div class="course-image">
+                            <div class="course-image-bg" style="background: linear-gradient(135deg, #2E8B57 0%, #3CB371 50%, #66CDAA 100%);">
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+                                    <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                                </div>
+                            </div>
+                            <div class="course-overlay"></div>
+                            <span class="course-badge">特色课程</span>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">文化与人文智慧高级研修班</h3>
+                            <p class="course-desc">拓展人文视野，提升审美品位，培养具有深厚文化底蕴的企业家精神。</p>
+                            <div class="course-meta">
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+                                    <span>学制：一年</span>
+                                </span>
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3z"/></svg>
+                                    <span>学费：68000</span>
+                                </span>
+                            </div>
+                            <button class="btn-details">
+                                了解课程详情
+                                <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section class="category-section">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79s7.15 2.71 9.88 0C18.32 15.65 19 14.08 19 12.1h2c0 1.98-.88 4.55-2.64 6.29-3.51 3.48-9.21 3.48-12.72 0-3.5-3.47-3.53-9.11-.02-12.58s9.14-3.47 12.65 0L21 3v7.12zM12.5 8v4.25l3.5 2.08-.72 1.21L11 13V8h1.5z"/></svg>
+                    </div>
+                    <h2 class="category-title">AI创新</h2>
+                </div>
+                <div class="course-pair">
+                    <article class="course-card" onclick="showDetail('ai-transformation')">
+                        <div class="course-image">
+                            <div class="course-image-bg" style="background: linear-gradient(135deg, #4B0082 0%, #663399 50%, #9370DB 100%);">
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+                                    <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor"><path d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79s7.15 2.71 9.88 0C18.32 15.65 19 14.08 19 12.1h2c0 1.98-.88 4.55-2.64 6.29-3.51 3.48-9.21 3.48-12.72 0-3.5-3.47-3.53-9.11-.02-12.58s9.14-3.47 12.65 0L21 3v7.12zM12.5 8v4.25l3.5 2.08-.72 1.21L11 13V8h1.5z"/></svg>
+                                </div>
+                            </div>
+                            <div class="course-overlay"></div>
+                            <span class="course-badge">前沿课程</span>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">「智企共生」企业AI转型实战研修班</h3>
+                            <p class="course-desc">系统学习AI技术应用，助力企业实现智能化转型升级，抢占AI时代发展先机。</p>
+                            <div class="course-meta">
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+                                    <span>学制：三天</span>
+                                </span>
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3z"/></svg>
+                                    <span>学费：6980</span>
+                                </span>
+                            </div>
+                            <button class="btn-details">
+                                了解课程详情
+                                <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="course-card" onclick="showDetail('ai-leadership')">
+                        <div class="course-image">
+                            <div class="course-image-bg" style="background: linear-gradient(135deg, #00CED1 0%, #20B2AA 50%, #008B8B 100%);">
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+                                    <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="course-overlay"></div>
+                            <span class="course-badge">创新课程</span>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">人工智能与企业家领导力高级研修班</h3>
+                            <p class="course-desc">融合AI技术与领导力培养，打造面向未来的智能型企业家领袖。</p>
+                            <div class="course-meta">
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+                                    <span>学制：一年半</span>
+                                </span>
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3z"/></svg>
+                                    <span>学费：138000</span>
+                                </span>
+                            </div>
+                            <button class="btn-details">
+                                了解课程详情
+                                <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            <div class="section-divider"></div>
+
+            <section class="category-section">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h2 class="category-title">企业家校友游学</h2>
+                </div>
+                <div class="course-pair">
+                    <article class="course-card" onclick="showDetail('egypt-study')">
+                        <div class="course-image">
+                            <div class="course-image-bg" style="background: linear-gradient(135deg, #D4A76A 0%, #A67C52 50%, #7A5C39 100%);">
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+                                    <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="course-overlay"></div>
+                            <span class="course-badge">特色课程</span>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">人文行走 · 埃及游学</h3>
+                            <p class="course-desc">在埃及，亲历千年商业伦理与"一带一路"枢纽战略的深度碰撞，解码文明底蕴下的现代投资实战。</p>
+                            <div class="course-meta">
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+                                    <span>学制：10天</span>
+                                </span>
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                                    <span>学费：28800</span>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card" onclick="showDetail('hainan-study')">
+                        <div class="course-image">
+                            <div class="course-image-bg" style="background: linear-gradient(135deg, #4FC3F7 0%, #29B6F6 50%, #0288D1 100%);">
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+                                    <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                </div>
+                            </div>
+                            <div class="course-overlay"></div>
+                            <span class="course-badge">特色课程</span>
+                        </div>
+                        <div class="course-content">
+                            <h3 class="course-title">海南自贸港游学</h3>
+                            <p class="course-desc">走进海南自贸港，洞察封关新红利，共话产业投资与发展机遇。</p>
+                            <div class="course-meta">
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+                                    <span>学制：3天</span>
+                                </span>
+                                <span class="course-meta-item">
+                                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                                    <span>学费：待定</span>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <h3 class="footer-title">浙江大学传媒国际文化经济高培中心</h3>
+            <div class="footer-line"></div>
+            <div class="footer-contact">
+                <p>电话：0571-86971122</p>
+            </div>
+            <p class="copyright">© 2024 浙江大学传媒国际文化经济高培中心 版权所有</p>
+        </footer>
+    </div>
+
+    <!-- Detail Page -->
+    <div id="detail-page">
+        <header class="header">
+            <div class="header-content detail">
+                <button class="back-btn" onclick="showHome()">
+                    <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                    返回课程列表
+                </button>
+                <div class="header-info">
+                    <div class="university-badge detail">
+                        <div class="university-logo detail">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- 鹰的形状 -->
+                                <path d="M50 10 L30 30 L35 40 L20 50 L40 55 L45 70 L50 55 L60 55 L80 50 L65 40 L70 30 Z" fill="#0055AA"/>
+                                <path d="M45 35 L55 35" stroke="white" stroke-width="2"/>
+                                <circle cx="47" cy="30" r="2" fill="white"/>
+                                <circle cx="53" cy="30" r="2" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="university-name detail">浙江大学传媒国际文化经济高培中心</span>
+                    </div>
+                    <h1 class="page-title detail" id="course-category">企业管理</h1>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <div class="hero-bg" id="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="course-badge large" id="course-badge">热门课程</span>
+                <h2 class="course-title large" id="course-title">金融投资实战运营高级研修班</h2>
+                <p class="course-subtitle large" id="course-subtitle">深度解析金融市场，掌握投资策略，实现财富增值</p>
+                <div class="course-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="duration">12</div>
+                        <div class="stat-label">个月学制</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="capacity">40</div>
+                        <div class="stat-label">人/班</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="hours">96</div>
+                        <div class="stat-label">课时</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">浙大</div>
+                        <div class="stat-label">师资</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <main class="container">
+            <section class="section">
+                <h3 class="section-title">
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    </span>
+                    课程简介
+                </h3>
+                <div class="content-text" id="course-intro">
+                    <p>本课程立足浙江大学优质学术资源，整合国内外顶尖师资力量，旨在培养具有国际视野和战略思维的企业高管人才。</p>
+                    <p>课程采用理论讲授与案例研讨相结合的教学方式，注重实践应用与创新思维的培养，帮助学员全面提升管理能力和领导力水平。</p>
+                    <div class="highlight-box">
+                        <p>💡 <strong>培养目标：</strong>系统掌握现代管理知识，提升战略决策能力，拓展商业人脉网络，实现个人与企业的共同发展。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </span>
+                    课程特色
+                </h3>
+                <ul class="feature-list" id="course-features">
+                    <li>
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        </span>
+                        <span class="feature-text"><strong>权威师资：</strong>由浙江大学教授、行业专家组成授课团队，确保教学质量</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        </span>
+                        <span class="feature-text"><strong>实战导向：</strong>注重理论与实践结合，引入大量真实商业案例</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        </span>
+                        <span class="feature-text"><strong>高端平台：</strong>搭建高端交流平台，拓展优质商业人脉资源</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        </span>
+                        <span class="feature-text"><strong>灵活学习：</strong>采用周末集中授课方式，不影响日常工作安排</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/></svg>
+                    </span>
+                    课程模块
+                </h3>
+                <div id="course-modules">
+                    <div class="curriculum-item">
+                        <div class="module-number">01</div>
+                        <div class="module-content">
+                            <h4>模块一：基础理论篇</h4>
+                            <p>系统学习现代管理学核心理论，构建完整的知识体系框架</p>
+                        </div>
+                    </div>
+                    <div class="curriculum-item">
+                        <div class="module-number">02</div>
+                        <div class="module-content">
+                            <h4>模块二：战略管理篇</h4>
+                            <p>深入解析企业战略制定与执行，把握市场机遇与竞争策略</p>
+                        </div>
+                    </div>
+                    <div class="curriculum-item">
+                        <div class="module-number">03</div>
+                        <div class="module-content">
+                            <h4>模块三：领导力提升篇</h4>
+                            <p>培养卓越领导能力，提升团队管理与组织协调能力</p>
+                        </div>
+                    </div>
+                    <div class="curriculum-item">
+                        <div class="module-number">04</div>
+                        <div class="module-content">
+                            <h4>模块四：实战演练篇</h4>
+                            <p>通过案例研讨、企业参访等方式，将理论转化为实践能力</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cta-section">
+                <h3 class="cta-title">开启您的学习之旅</h3>
+                <p class="cta-subtitle">浙江大学传媒国际文化经济高培中心期待与您携手共创卓越</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="applyNow()">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20l-4-4 1.41-1.41L10 17.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        电话咨询：0571-86971122
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <h3 class="footer-title">浙江大学传媒国际文化经济高培中心</h3>
+            <div class="footer-line"></div>
+            <div class="footer-contact">
+                <p>电话：0571-86971122</p>
+            </div>
+            <p class="copyright">© 2024 浙江大学传媒国际文化经济高培中心 版权所有</p>
+        </footer>
+    </div>
+
+    <script>
+        // Course data configuration
+        const courseConfig = {
+            finance: {
+                category: '企业管理',
+                badge: '热门课程',
+                title: '金融投资实战运营高级研修班',
+                subtitle: '深度解析金融市场，掌握投资策略，实现财富增值',
+                duration: '12',
+                capacity: '40',
+                hours: '96',
+                bgGradient: 'linear-gradient(135deg, #1a5a9e 0%, #0055AA 50%, #003366 100%)',
+                intro: [
+                    '<strong>金融投资实战运营高级研修班</strong>旨在培养具有全球视野和实战能力的投资决策者。课程涵盖宏观经济、资本运作、投资策略、风险管理等核心领域，帮助学员系统掌握金融投资的专业知识和实战技能。',
+                    '课程邀请浙江大学知名教授、金融机构高管和资深投资专家联合授课，采用理论讲授、案例研讨、模拟操盘、实地考察相结合的教学方式，确保学员能够学以致用，提升投资决策能力和资本运营水平。'
+                ],
+                features: [
+                    { title: '实战教学', desc: '理论结合实践，模拟操盘演练，提升投资决策能力' },
+                    { title: '权威师资', desc: '浙江大学教授+金融机构高管+资深投资专家' },
+                    { title: '资源对接', desc: '搭建高端金融人脉平台，对接优质投资项目' },
+                    { title: '终身学习', desc: '加入浙大校友网络，享受终身学习服务' }
+                ],
+                modules: [
+                    { title: '宏观经济与政策解读', desc: '分析国内外经济形势，解读国家金融政策' },
+                    { title: '资本运作与投融资策略', desc: '掌握企业融资、并购重组等资本运作技巧' },
+                    { title: '证券投资分析与策略', desc: '学习股票、债券、基金等投资工具的分析方法' },
+                    { title: '风险管理与资产配置', desc: '建立科学的风险管理体系，优化资产配置' },
+                    { title: '房地产与大宗商品投资', desc: '了解房地产市场和大宗商品投资机会' },
+                    { title: '金融科技与创新金融', desc: '探索金融科技发展趋势和创新金融模式' }
+                ]
+            },
+            zheshang: {
+                category: '企业管理',
+                badge: '精品课程',
+                title: '浙商企业家创新高级研修班',
+                subtitle: '传承浙商精神，赋能创新发展',
+                duration: '10',
+                capacity: '45',
+                hours: '80',
+                bgGradient: 'linear-gradient(135deg, #1890ff 0%, #096dd9 100%)',
+                intro: [
+                    '<strong>浙商企业家创新高级研修班</strong>是浙江大学专为浙商企业家打造的高端研修项目。课程聚焦企业创新与转型，融合浙江大学前沿科研成果和浙商成功经验，旨在培养具有全球视野、创新思维和卓越领导力的新一代浙商领袖。',
+                    '课程邀请浙江大学知名教授、成功浙商企业家和行业专家联合授课，通过理论学习、案例研讨、企业参访、实战演练等多种教学方式，帮助学员把握产业发展趋势，激发创新思维，提升企业核心竞争力，实现企业高质量发展。'
+                ],
+                features: [
+                    { title: '浙商特色', desc: '传承浙商精神，分享浙商成功经验' },
+                    { title: '创新驱动', desc: '聚焦企业创新战略和数字化转型' },
+                    { title: '资源整合', desc: '搭建浙商交流平台，整合优质资源' },
+                    { title: '终身学习', desc: '加入浙大校友网络，享受终身学习服务' }
+                ],
+                modules: [
+                    { title: '宏观经济与产业趋势', desc: '分析国内外经济形势和产业发展趋势' },
+                    { title: '企业创新战略与管理', desc: '制定企业创新战略，建立创新管理体系' },
+                    { title: '数字化转型与智能制造', desc: '推动企业数字化转型，提升智能制造水平' },
+                    { title: '商业模式创新与设计', desc: '创新商业模式，构建企业核心竞争力' },
+                    { title: '资本运作与投融资', desc: '掌握企业融资、并购重组等资本运作技巧' },
+                    { title: '领导力提升与团队建设', desc: '提升领导力，打造高绩效团队' },
+                    { title: '浙商精神与企业文化', desc: '传承浙商精神，构建特色企业文化' },
+                    { title: '全球视野与国际化战略', desc: '拓展全球视野，制定企业国际化战略' }
+                ]
+            },
+            guoxue: {
+                category: '人文智慧',
+                badge: '经典课程',
+                title: '浙江大学国学智慧与管理应用高级研修班',
+                subtitle: '传承国学智慧，提升管理境界',
+                duration: '12',
+                capacity: '35',
+                hours: '72',
+                bgGradient: 'linear-gradient(135deg, #D2B48C 0%, #A0522D 50%, #8B4513 100%)',
+                intro: [
+                    '<strong>浙江大学国学智慧与管理应用高级研修班</strong>旨在帮助企业家和高级管理者深入学习中国传统智慧，将其与现代管理实践相结合，提升领导力、决策力和管理智慧。课程涵盖儒家、道家、兵家、易经等国学经典，从中汲取管理智慧，应用于现代企业管理实践。',
+                    '课程邀请知名国学大师、管理专家和企业家联合授课，通过经典研读、案例分析、实战演练等教学方式，帮助学员领悟国学智慧的精髓，提升个人修养和管理境界，实现企业可持续发展。'
+                ],
+                features: [
+                    { title: '经典研读', desc: '深入学习《论语》、《道德经》、《孙子兵法》、《易经》等国学经典' },
+                    { title: '智慧应用', desc: '将国学智慧与现代管理实践相结合，提升管理能力' },
+                    { title: '名师授课', desc: '知名国学大师+管理专家+企业家' },
+                    { title: '修身养性', desc: '提升个人修养，培养领导者的内在品质' }
+                ],
+                modules: [
+                    { title: '儒家智慧与领导力', desc: '学习儒家的仁、义、礼、智、信思想，提升领导力' },
+                    { title: '道家智慧与管理哲学', desc: '理解道家的无为而治、道法自然理念，优化管理方式' },
+                    { title: '兵家智慧与战略管理', desc: '运用孙子兵法的战略思维制定企业策略' },
+                    { title: '易经智慧与决策艺术', desc: '学习易经的辩证思维和预测方法，提升决策能力' },
+                    { title: '佛学智慧与心灵修炼', desc: '汲取佛学的慈悲、智慧和放下的境界，提升心灵修养' },
+                    { title: '中医智慧与企业治理', desc: '借鉴中医的整体观和辨证施治思想，构建健康的企业生态' }
+                ]
+            },
+            culture: {
+                category: '人文智慧',
+                badge: '特色课程',
+                title: '文化与人文智慧高级研修班',
+                subtitle: '以文促商，以商载文',
+                duration: '18',
+                capacity: '30',
+                hours: '108',
+                bgGradient: 'linear-gradient(135deg, #2E8B57 0%, #3CB371 50%, #66CDAA 100%)',
+                intro: [
+                    '<strong>文化与人文智慧高级研修班</strong>旨在培养具有深厚文化底蕴和卓越商业智慧的企业家。课程融合中国传统文化与现代商业管理，通过文化熏陶、哲学思辨、艺术鉴赏等方式，提升企业家的人文素养和精神境界，实现文化与商业的有机结合。',
+                    '课程邀请浙江大学知名教授、文化学者、艺术家和企业家联合授课，通过理论学习、文化考察、艺术鉴赏、案例研讨等多种教学方式，帮助学员拓展人文视野，提升审美品位，培养企业家的文化自觉和文化自信，实现企业与个人的全面发展。'
+                ],
+                features: [
+                    { title: '文化熏陶', desc: '深入学习中国传统文化，提升人文素养' },
+                    { title: '商业智慧', desc: '将文化智慧与商业实践相结合，提升商业洞察力' },
+                    { title: '跨界融合', desc: '邀请文化学者、艺术家和企业家跨界交流' },
+                    { title: '资源对接', desc: '搭建文化与商业融合的资源平台' }
+                ],
+                modules: [
+                    { title: '中国传统文化与现代管理', desc: '学习中国传统文化的精髓，探索其在现代管理中的应用' },
+                    { title: '中西哲学与人生智慧', desc: '比较中西哲学思想，探索人生意义和价值追求' },
+                    { title: '艺术鉴赏与审美提升', desc: '学习绘画、音乐、书法等艺术鉴赏方法，提升审美品位' },
+                    { title: '文化产业与商业模式创新', desc: '了解文化产业发展趋势，探索文化与商业融合的新模式' },
+                    { title: '领导力与企业家精神', desc: '培养具有文化底蕴的卓越领导力' },
+                    { title: '文化考察与实践', desc: '实地考察文化名企和文化景点，感受文化的魅力' }
+                ]
+            },
+            'ai-transformation': {
+                category: 'AI创新',
+                badge: '前沿课程',
+                title: '「智企共生」企业AI转型实战研修班',
+                subtitle: '系统学习AI技术，助力企业智能化转型',
+                duration: '3',
+                capacity: '35',
+                hours: '24',
+                bgGradient: 'linear-gradient(135deg, #4B0082 0%, #663399 50%, #9370DB 100%)',
+                intro: [
+                    '<strong>「智企共生」企业AI转型实战研修班</strong>是专为企业高管设计的AI应用实战课程。课程聚焦AI技术在企业中的实际应用，帮助学员系统掌握AI技术的核心概念、应用场景和实施路径，助力企业实现智能化转型升级，抢占AI时代发展先机。',
+                    '课程采用"理论+实践"双轨教学模式，邀请AI领域专家和企业AI转型成功案例负责人联合授课，通过案例分析、实战演练、现场辅导等多种教学方式，确保学员能够学以致用，掌握AI技术落地的实用方法和工具。'
+                ],
+                features: [
+                    { title: '实战导向', desc: '聚焦AI技术在企业中的实际应用，提供实战演练机会' },
+                    { title: '前沿技术', desc: '覆盖GPT、大模型、机器学习等最新AI技术' },
+                    { title: '案例丰富', desc: '精选国内外企业AI转型成功案例，分享实战经验' },
+                    { title: '专家指导', desc: 'AI领域专家+企业AI转型成功案例负责人' }
+                ],
+                modules: [
+                    { title: 'AI技术全景与发展趋势', desc: '了解AI技术的发展历程、核心概念和未来趋势' },
+                    { title: '企业AI应用场景与案例分析', desc: '探索AI在营销、生产、管理等领域的应用场景' },
+                    { title: '企业AI转型战略与实施路径', desc: '制定企业AI转型战略，设计实施路径和落地计划' },
+                    { title: 'AI工具实战演练', desc: '动手实践GPT、大模型等AI工具，掌握其在企业中的应用方法' },
+                    { title: 'AI伦理与风险管理', desc: '了解AI应用中的伦理问题和风险管理策略' },
+                    { title: '企业AI转型案例研讨', desc: '深入研讨企业AI转型成功案例，分享实战经验' }
+                ]
+            },
+            'ai-leadership': {
+                category: 'AI创新',
+                badge: '创新课程',
+                title: '人工智能与企业家领导力高级研修班',
+                subtitle: '融合AI技术与领导力，打造智能时代的企业领袖',
+                duration: '18',
+                capacity: '30',
+                hours: '96',
+                bgGradient: 'linear-gradient(135deg, #00CED1 0%, #20B2AA 50%, #008B8B 100%)',
+                intro: [
+                    '<strong>人工智能与企业家领导力高级研修班</strong>是浙江大学专为新时代企业家设计的高端研修项目。课程将AI技术与领导力培养深度融合，旨在培养具备AI素养、全球视野和卓越领导力的智能时代企业领袖。',
+                    '课程邀请浙江大学知名教授、AI领域专家和企业高管联合授课，通过理论学习、案例研讨、实战演练、企业参访等多种教学方式，帮助学员把握AI时代的发展趋势，重新定义领导力，带领企业在AI时代实现可持续发展。'
+                ],
+                features: [
+                    { title: '双轨培养', desc: 'AI技术与领导力双向提升，打造智能时代企业领袖' },
+                    { title: '前沿视角', desc: '探讨AI时代的领导力变革和企业转型策略' },
+                    { title: '实战导向', desc: '将AI技术应用于管理实践，提升决策能力和团队效能' },
+                    { title: '资源对接', desc: '搭建AI领域高端人脉平台，对接优质资源' }
+                ],
+                modules: [
+                    { title: 'AI时代的战略思维与领导力变革', desc: '理解AI对企业战略和领导力的影响，重塑领导思维' },
+                    { title: 'AI技术与企业数字化转型', desc: '学习AI核心技术，制定企业数字化转型战略' },
+                    { title: 'AI驱动的决策优化与风险管理', desc: '利用AI技术提升决策质量，优化风险管理' },
+                    { title: 'AI时代的团队管理与组织变革', desc: '管理AI时代的混合团队，推动组织变革' },
+                    { title: 'AI伦理与社会责任', desc: '了解AI应用中的伦理问题和企业社会责任' },
+                    { title: '全球视野与国际合作', desc: '拓展全球视野，探索AI时代的国际合作机会' }
+                ]
+            },
+            'egypt-study': {
+                category: '企业家校友游学',
+                badge: '特色课程',
+                title: '人文行走·埃及游学',
+                subtitle: '文明古国与现代产业的深度碰撞，含金字塔、博物馆、神庙、帝王谷在内',
+                duration: '10',
+                capacity: '25',
+                hours: '10天全程',
+                bgGradient: 'linear-gradient(135deg, #D4AF37 0%, #B87333 50%, #8B4513 100%)',
+                intro: [
+                    '<strong>人文行走·埃及游学</strong>是一场跨越千年的文明探索之旅。学员将走进世界四大文明古国之一的埃及，亲身体验金字塔、狮身人面像、卢克索神庙等世界奇迹，感受古埃及文明的神秘与伟大。',
+                    '课程设计融合文化考察与商业交流，安排参观埃及现代企业和产业园区，了解埃及经济发展现状和投资机会，实现文化体验与商业价值的双重收获。'
+                ],
+                features: [
+                    { title: '文化盛宴', desc: '全面体验古埃及文明的精髓' },
+                    { title: '商业洞察', desc: '了解埃及现代经济发展与投资机会' },
+                    { title: '高端人脉', desc: '与企业家校友共同探索，拓展人脉资源' },
+                    { title: '专业服务', desc: '全程专业导师陪伴，贴心安排行程' }
+                ],
+                modules: [
+                    { title: '开罗文化探索', desc: '参观金字塔、狮身人面像、埃及博物馆' },
+                    { title: '卢克索历史之旅', desc: '游览卢克索神庙、卡尔纳克神庙、帝王谷' },
+                    { title: '红海度假体验', desc: '享受红海美丽风光，体验水上活动' },
+                    { title: '商业交流活动', desc: '与埃及企业高管交流，了解当地商业环境' }
+                ]
+            },
+            'hainan-study': {
+                category: '企业家校友游学',
+                badge: '热门课程',
+                title: '海南自贸港游学',
+                subtitle: '走进海南自贸港，洞察政策新红利，共话产业投资与发展机遇',
+                duration: '3',
+                capacity: '35',
+                hours: '3天全程',
+                bgGradient: 'linear-gradient(135deg, #32CD32 0%, #228B22 50%, #006400 100%)',
+                intro: [
+                    '<strong>海南自贸港游学</strong>聚焦中国特色自由贸易港建设，深入解读海南自贸港政策红利和发展机遇。学员将实地考察海南重点产业园区、龙头企业和创新项目，了解自贸港建设的最新进展和实践经验。',
+                    '课程邀请海南自贸港政策制定者、经济学家和企业家授课，通过政策解读、案例分析和实地调研相结合的方式，帮助学员把握海南自贸港发展机遇，探索企业转型和投资方向。'
+                ],
+                features: [
+                    { title: '政策解读', desc: '深入理解海南自贸港政策体系和优惠措施' },
+                    { title: '实地考察', desc: '参观海南重点产业园区和企业' },
+                    { title: '专家交流', desc: '与政策制定者和企业家面对面交流' },
+                    { title: '投资对接', desc: '了解海南投资机会，对接合作资源' }
+                ],
+                modules: [
+                    { title: '海南自贸港政策解读', desc: '分析海南自贸港总体方案和政策体系' },
+                    { title: '重点产业园区考察', desc: '参观海口江东新区、三亚崖州湾科技城等' },
+                    { title: '龙头企业调研', desc: '考察海南重点企业，了解产业发展现状' },
+                    { title: '投资机遇对接会', desc: '与当地政府和企业对接投资项目' }
+                ]
+            }
+        };
+
+        // Page switching functions
+        function showHome() {
+            document.getElementById('home-page').style.display = 'block';
+            document.getElementById('detail-page').style.display = 'none';
+            document.title = '浙江大学传媒国际文化经济高培中心 - 高管教育课程';
+        }
+
+        function showDetail(courseId) {
+            const config = courseConfig[courseId];
+            if (config) {
+                // Update page content
+                document.getElementById('course-category').textContent = config.category;
+                document.getElementById('course-badge').textContent = config.badge;
+                document.getElementById('course-title').textContent = config.title;
+                document.getElementById('course-subtitle').textContent = config.subtitle;
+
+                document.getElementById('duration').textContent = config.duration;
+                document.getElementById('capacity').textContent = config.capacity;
+                document.getElementById('hours').textContent = config.hours;
+
+                const heroBg = document.getElementById('hero-bg');
+                heroBg.style.background = config.bgGradient;
+
+                // Update course introduction
+                const introContainer = document.getElementById('course-intro');
+                introContainer.innerHTML = config.intro.map(p => `<p>${p}</p>`).join('');
+
+                // Update course features
+                const featuresContainer = document.getElementById('course-features');
+                featuresContainer.innerHTML = config.features.map(f => `
+                    <li>
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        </span>
+                        <span class="feature-text"><strong>${f.title}：</strong>${f.desc}</span>
+                    </li>
+                `).join('');
+
+                // Update course modules
+                const modulesContainer = document.getElementById('course-modules');
+                modulesContainer.innerHTML = config.modules.map((m, index) => `
+                    <div class="curriculum-item">
+                        <div class="module-number">0${index + 1}</div>
+                        <div class="module-content">
+                            <h4>${m.title}</h4>
+                            <p>${m.desc}</p>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Update page title
+                document.title = `${config.title} - 浙江大学传媒国际文化经济高培中心`;
+
+                // Show detail page, hide home page
+                document.getElementById('home-page').style.display = 'none';
+                document.getElementById('detail-page').style.display = 'block';
+
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function applyNow() {
+            alert('感谢您的关注！请电话咨询：0571-86971122');
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up course card click handlers
+            const courseCards = document.querySelectorAll('.course-card');
+            courseCards.forEach(card => {
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('role', 'button');
+
+                card.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
